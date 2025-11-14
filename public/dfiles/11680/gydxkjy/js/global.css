@@ -1,0 +1,14 @@
+/*网站基本定义*/
+ 
+img{border:0px;}
+ul,li{ list-style:none;}
+em,i{ font-style:normal;}
+a{ text-decoration:none; color:#333; outline:none;}
+a:hover{ background-repeat:no-repeat; color:#03a5e3;}
+.del_float{ clear:both; line-height:0; height:0; font-size:0;}
+a,area{blr:expression(this.onFocus=this.blur());}
+
+/*网站基本定义*/
+
+.clearfix:after{visibility: hidden;display: block;font-size: 0;content: " ";clear: both;height: 0;}
+.clearfix{*zoom:1;}

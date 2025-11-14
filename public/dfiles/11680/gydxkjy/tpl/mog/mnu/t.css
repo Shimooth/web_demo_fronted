@@ -1,0 +1,46 @@
+.mnu_man{
+	width:100%;
+	float:left;
+	background:#0252a9;}
+.mnu_man .in{
+	width:1200px;
+	margin:auto;
+	text-align:left;
+	height:52px;}
+.mnu_man .m{
+	float:left;
+	width:1200;}
+.mnu_man .m a{
+	float:left;
+	width:100px;
+	height:52px;
+	line-height:52px;
+	font-size:14px;
+	font-family:"微软雅黑";
+	text-align:center;
+	color:#ffffff;
+	font-weight:bold;}
+.mnu_man .s{
+	position:absolute;
+	z-index:9999999999999999999;}
+.mnu_man .s .i{
+	width:150px;
+	position:absolute;
+	line-height:30px;
+	display:none;
+	background:#fff;
+	padding-bottom:20px;
+	padding-top:10px;}
+.mnu_man .s .i a{
+	float:left;
+	font-family:"微软雅黑";
+	color:#0252a9;
+	text-indent:10px;
+	display:block;
+	line-height:28px;
+	height:28px;
+	width:100%;
+	font-size:13px;}
+.mnu_man .s .i a:hover{
+	color:#fff;
+	background:#0252a9;}
