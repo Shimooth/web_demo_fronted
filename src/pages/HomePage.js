@@ -5,22 +5,16 @@ function HomePage() {
   // 轮播图数据
   const carouselImages = [
     {
-      src: 'https://via.placeholder.com/1200x400/0ea5e9/ffffff?text=园区新闻1',
-      alt: '园区新闻',
+      src: '/images/carousel-1.jpg',
+      alt: '园区发展',
       title: '高新区科技园发展动态',
       description: '推动科技创新，促进产业发展'
     },
     {
-      src: 'https://via.placeholder.com/1200x400/6366f1/ffffff?text=园区新闻2',
-      alt: '政策法规',
-      title: '最新政策发布',
-      description: '关注政策法规，把握发展机遇'
-    },
-    {
-      src: 'https://via.placeholder.com/1200x400/10b981/ffffff?text=园区新闻3',
-      alt: '科技服务',
-      title: '科技服务创新',
-      description: '为企业提供优质科技服务'
+      src: '/images/carousel-2.jpg',
+      alt: '园区建设',
+      title: '科技园区建设成果',
+      description: '打造现代化科技产业园区'
     },
   ];
 

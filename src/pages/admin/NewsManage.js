@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function NewsManage() {
+  const navigate = useNavigate();
   const [newsList, setNewsList] = useState([
     { id: 1, title: '高新区科技局举办科技创新政策解读会', date: '2024-01-15', category: '新闻动态' },
     { id: 2, title: '2024年度科技项目申报工作正式启动', date: '2024-01-10', category: '通知公告' },
@@ -9,6 +11,20 @@ function NewsManage() {
   return (
     <div className="min-h-screen bg-gray-50 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* 导航栏 */}
+        <div className="bg-white rounded-lg shadow-md mb-6 p-4">
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => navigate('/admin/dashboard')}
+              className="text-gray-600 hover:text-gray-800"
+            >
+              ← 返回首页
+            </button>
+            <span className="text-gray-400">|</span>
+            <span className="text-gray-600">新闻管理</span>
+          </div>
+        </div>
+
         <div className="bg-white rounded-lg shadow-md p-8">
           <div className="flex justify-between items-center mb-6">
             <h1 className="text-3xl font-bold text-gray-800">新闻管理</h1>

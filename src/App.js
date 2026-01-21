@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import ParkOverviewPage from './pages/ParkOverviewPage';
 import NewsPage from './pages/NewsPage';
+import PartyBuildingPage from './pages/PartyBuildingPage';
 import PoliciesPage from './pages/PoliciesPage';
 import DownloadsPage from './pages/DownloadsPage';
 import ContactPage from './pages/ContactPage';
@@ -16,6 +17,10 @@ import ContactPage from './pages/ContactPage';
 import AdminLogin from './pages/admin/AdminLogin';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import NewsManage from './pages/admin/NewsManage';
+import PoliciesManage from './pages/admin/PoliciesManage';
+import PartyBuildingManage from './pages/admin/PartyBuildingManage';
+import DownloadsManage from './pages/admin/DownloadsManage';
+import CarouselManage from './pages/admin/CarouselManage';
 import AdminRoute from './pages/admin/AdminRoute';
 
 function App() {
@@ -44,14 +49,15 @@ function App() {
           path="/admin/policies"
           element={
             <AdminRoute>
-              <div className="min-h-screen bg-gray-50 py-8">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                  <div className="bg-white rounded-lg shadow-md p-8">
-                    <h1 className="text-3xl font-bold text-gray-800 mb-6">政策管理</h1>
-                    <p className="text-gray-600">政策管理功能开发中...</p>
-                  </div>
-                </div>
-              </div>
+              <PoliciesManage />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/admin/party-building"
+          element={
+            <AdminRoute>
+              <PartyBuildingManage />
             </AdminRoute>
           }
         />
@@ -59,14 +65,7 @@ function App() {
           path="/admin/downloads"
           element={
             <AdminRoute>
-              <div className="min-h-screen bg-gray-50 py-8">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                  <div className="bg-white rounded-lg shadow-md p-8">
-                    <h1 className="text-3xl font-bold text-gray-800 mb-6">资料管理</h1>
-                    <p className="text-gray-600">资料管理功能开发中...</p>
-                  </div>
-                </div>
-              </div>
+              <DownloadsManage />
             </AdminRoute>
           }
         />
@@ -74,14 +73,7 @@ function App() {
           path="/admin/carousel"
           element={
             <AdminRoute>
-              <div className="min-h-screen bg-gray-50 py-8">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                  <div className="bg-white rounded-lg shadow-md p-8">
-                    <h1 className="text-3xl font-bold text-gray-800 mb-6">轮播图管理</h1>
-                    <p className="text-gray-600">轮播图管理功能开发中...</p>
-                  </div>
-                </div>
-              </div>
+              <CarouselManage />
             </AdminRoute>
           }
         />
@@ -98,6 +90,7 @@ function App() {
                   <Route path="/" element={<HomePage />} />
                   <Route path="/park-overview" element={<ParkOverviewPage />} />
                   <Route path="/news" element={<NewsPage />} />
+                  <Route path="/party-building" element={<PartyBuildingPage />} />
                   <Route path="/policies" element={<PoliciesPage />} />
                   <Route path="/downloads" element={<DownloadsPage />} />
                   <Route path="/contact" element={<ContactPage />} />

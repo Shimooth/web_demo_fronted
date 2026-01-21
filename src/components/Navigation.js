@@ -8,6 +8,7 @@ function Navigation() {
     { path: '/', name: '首页' },
     { path: '/park-overview', name: '园区概况' },
     { path: '/news', name: '园区新闻' },
+    { path: '/party-building', name: '园区党建' },
     { path: '/policies', name: '政策法规' },
     { path: '/downloads', name: '资料下载' },
     { path: '/contact', name: '联系我们' },
