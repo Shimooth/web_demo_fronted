@@ -2,7 +2,7 @@ import React from 'react';
 
 function NewsPage() {
   const newsList = [
-    { id: 1, title: '高新区科技局举办科技创新政策解读会', date: '2024-01-15', category: '新闻动态' },
+    { id: 1, title: '宿迁大学科技园举办科技创新政策解读会', date: '2024-01-15', category: '新闻动态' },
     { id: 2, title: '2024年度科技项目申报工作正式启动', date: '2024-01-10', category: '通知公告' },
     { id: 3, title: '园区企业与高校签署产学研合作协议', date: '2024-01-08', category: '新闻动态' },
     { id: 4, title: '科技创新成果转化项目路演活动成功举办', date: '2024-01-05', category: '新闻动态' },

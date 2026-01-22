@@ -7,7 +7,7 @@ function HomePage() {
     {
       src: '/images/carousel-1.jpg',
       alt: '园区发展',
-      title: '高新区科技园发展动态',
+      title: '宿迁大学科技园发展动态',
       description: '推动科技创新，促进产业发展'
     },
     {
@@ -21,6 +21,9 @@ function HomePage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* 轮播图 */}
+      {/* <div className="mt-4">
+        <Carousel images={carouselImages} />
+      </div> */}
       <Carousel images={carouselImages} />
 
       {/* 主要内容区域 */}
@@ -41,7 +44,7 @@ function HomePage() {
                     <span className="w-2 h-2 bg-primary-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                     <div className="flex-1">
                       <a href="#" className="text-gray-700 hover:text-primary-600 transition-colors">
-                        高新区科技局举办科技创新政策解读会
+                        宿迁大学科技园举办科技创新政策解读会
                       </a>
                       <span className="text-gray-500 text-sm ml-4">2024-01-15</span>
                     </div>
@@ -80,7 +83,7 @@ function HomePage() {
             <div className="bg-white rounded-lg shadow-md p-6">
               <h2 className="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">园区概况</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                宿迁市高新区科技局致力于推动科技创新，促进产业发展，为企业提供优质的科技服务和政策支持。
+              宿迁大学科技园致力于推动科技创新，促进产业发展，为企业提供优质的科技服务和政策支持。
               </p>
               <a
                 href="/park-overview"

@@ -10,7 +10,7 @@ function ParkOverviewPage() {
           <div className="prose max-w-none">
             <h2 className="text-2xl font-semibold text-gray-700 mt-6 mb-4">关于我们</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              宿迁市高新区科技局是负责推动高新区科技创新和产业发展的政府机构。
+              宿迁大学科技园是负责推动高新区科技创新和产业发展的政府机构。
               我们致力于为企业提供优质的科技服务，推动科技成果转化，促进高新技术产业发展。
             </p>
 

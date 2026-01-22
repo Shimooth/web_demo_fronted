@@ -8,7 +8,7 @@ function Header() {
           {/* Logo */}
           <div className="flex items-center">
             <h1 className="text-2xl font-bold text-gray-800">
-              宿迁市高新区科技局
+            宿迁大学科技园
             </h1>
           </div>
           

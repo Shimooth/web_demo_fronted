@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 function NewsManage() {
   const navigate = useNavigate();
   const [newsList, setNewsList] = useState([
-    { id: 1, title: '高新区科技局举办科技创新政策解读会', date: '2024-01-15', category: '新闻动态' },
+    { id: 1, title: '宿迁大学科技园举办科技创新政策解读会', date: '2024-01-15', category: '新闻动态' },
     { id: 2, title: '2024年度科技项目申报工作正式启动', date: '2024-01-10', category: '通知公告' },
   ]);
 

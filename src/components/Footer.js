@@ -7,7 +7,7 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-lg font-semibold mb-4">联系方式</h3>
-            <p className="text-gray-300">地址：宿迁市高新区科技大厦</p>
+            <p className="text-gray-300">地址：宿迁市宿迁大学科技园</p>
             <p className="text-gray-300">电话：0527-XXXXXXX</p>
             <p className="text-gray-300">邮箱：contact@sqhitech.gov.cn</p>
           </div>
@@ -28,7 +28,7 @@ function Footer() {
         </div>
         
         <div className="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
-          <p>版权所有 © {new Date().getFullYear()} 宿迁市高新区科技局 保留所有权利</p>
+          <p>版权所有 © {new Date().getFullYear()} 宿迁市宿迁大学科技园 保留所有权利</p>
         </div>
       </div>
     </footer>
