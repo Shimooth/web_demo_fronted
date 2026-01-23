@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Navigation from './components/Navigation';
@@ -24,6 +24,8 @@ import CarouselManage from './pages/admin/CarouselManage';
 import AdminRoute from './pages/admin/AdminRoute';
 
 function App() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <Router>
       <Routes>
@@ -83,8 +85,14 @@ function App() {
           path="/*"
           element={
             <div className="min-h-screen flex flex-col bg-gray-50">
-              <Header />
-              <Navigation />
+              <Header 
+                isMobileMenuOpen={isMobileMenuOpen}
+                setIsMobileMenuOpen={setIsMobileMenuOpen}
+              />
+              <Navigation 
+                isMobileMenuOpen={isMobileMenuOpen}
+                setIsMobileMenuOpen={setIsMobileMenuOpen}
+              />
               <main className="flex-grow">
                 <Routes>
                   <Route path="/" element={<HomePage />} />
