@@ -8,6 +8,16 @@ function ParkOverviewPage() {
           <h1 className="text-3xl font-bold text-gray-800 mb-6 border-b pb-4">园区概况</h1>
           
           <div className="prose max-w-none">
+            <div className="mb-6">
+              <img
+                src="/images/carousel-2.jpg"
+                alt="园区概况"
+                className="w-full h-auto rounded-lg shadow-md"
+                onError={(e) => {
+                  e.target.src = 'https://via.placeholder.com/800x400/cccccc/666666?text=图片加载失败';
+                }}
+              />
+            </div>
             <h2 className="text-2xl font-semibold text-gray-700 mt-6 mb-4">关于我们</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
               宿迁大学科技园是负责推动高新区科技创新和产业发展的政府机构。

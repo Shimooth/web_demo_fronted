@@ -38,8 +38,17 @@ function CarouselManage() {
     link: '',
     description: '',
     order: 1,
-    status: '启用'
+    status: '启用',
+    type: 'custom', // 'custom' 或 'news'
+    newsId: null
   });
+
+  // 模拟新闻数据（实际应该从新闻管理获取）
+  const newsWithCover = [
+    { id: 1, title: '宿迁大学科技园举办科技创新政策解读会', coverImage: '/images/org/image1.jpg' },
+    { id: 3, title: '园区企业与高校签署产学研合作协议', coverImage: '/images/org/image2.jpg' },
+    { id: 4, title: '科技创新成果转化项目路演活动成功举办', coverImage: '/images/org/image3.jpg' },
+  ];
 
   const handleAdd = () => {
     setEditingCarousel(null);
@@ -49,7 +58,9 @@ function CarouselManage() {
       link: '',
       description: '',
       order: carouselList.length + 1,
-      status: '启用'
+      status: '启用',
+      type: 'custom',
+      newsId: null
     });
     setShowAddModal(true);
   };
@@ -62,7 +73,9 @@ function CarouselManage() {
       link: carousel.link,
       description: carousel.description || '',
       order: carousel.order,
-      status: carousel.status
+      status: carousel.status,
+      type: carousel.type || 'custom',
+      newsId: carousel.newsId || null
     });
     setShowAddModal(true);
   };
@@ -266,53 +279,139 @@ function CarouselManage() {
               <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    标题 *
+                    轮播图类型 *
                   </label>
-                  <input
-                    type="text"
+                  <select
                     required
-                    value={formData.title}
-                    onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+                    value={formData.type}
+                    onChange={(e) => {
+                      const newType = e.target.value;
+                      if (newType === 'news') {
+                        // 如果选择新闻类型，自动填充第一个新闻的信息
+                        const firstNews = newsWithCover[0];
+                        if (firstNews) {
+                          setFormData({
+                            ...formData,
+                            type: newType,
+                            newsId: firstNews.id,
+                            title: firstNews.title,
+                            image: firstNews.coverImage,
+                            link: `/news`
+                          });
+                        } else {
+                          setFormData({ ...formData, type: newType });
+                        }
+                      } else {
+                        setFormData({ ...formData, type: newType, newsId: null });
+                      }
+                    }}
                     className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500"
-                    placeholder="请输入轮播图标题"
-                  />
+                  >
+                    <option value="custom">自定义轮播图</option>
+                    <option value="news">新闻封面轮播图</option>
+                  </select>
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    图片 *
-                  </label>
-                  <div className="space-y-2">
-                    <input
-                      type="text"
-                      value={formData.image}
-                      onChange={(e) => setFormData({ ...formData, image: e.target.value })}
-                      className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500"
-                      placeholder="请输入图片URL或上传图片"
-                    />
-                    <div className="flex items-center gap-4">
-                      <label className="flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
-                        <span className="text-sm text-gray-700">选择文件</span>
-                        <input 
-                          type="file" 
-                          className="hidden" 
-                          accept="image/*"
-                          onChange={handleImageUpload}
-                        />
+                {formData.type === 'news' ? (
+                  <>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        选择新闻 *
                       </label>
-                      {formData.image && (
+                      <select
+                        required
+                        value={formData.newsId || ''}
+                        onChange={(e) => {
+                          const newsId = parseInt(e.target.value);
+                          const selectedNews = newsWithCover.find(n => n.id === newsId);
+                          if (selectedNews) {
+                            setFormData({
+                              ...formData,
+                              newsId: newsId,
+                              title: selectedNews.title,
+                              image: selectedNews.coverImage,
+                              link: `/news`
+                            });
+                          }
+                        }}
+                        className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                      >
+                        <option value="">请选择新闻</option>
+                        {newsWithCover.map(news => (
+                          <option key={news.id} value={news.id}>{news.title}</option>
+                        ))}
+                      </select>
+                    </div>
+                    {formData.image && (
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          封面图片预览
+                        </label>
                         <img
                           src={formData.image}
                           alt="预览"
-                          className="h-24 w-auto rounded border border-gray-200"
+                          className="h-48 w-auto rounded border border-gray-200"
                           onError={(e) => {
                             e.target.style.display = 'none';
                           }}
                         />
-                      )}
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        标题 *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.title}
+                        onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+                        className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                        placeholder="请输入轮播图标题"
+                      />
                     </div>
-                  </div>
-                </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        图片 *
+                      </label>
+                      <div className="space-y-2">
+                        <input
+                          type="text"
+                          required
+                          value={formData.image}
+                          onChange={(e) => setFormData({ ...formData, image: e.target.value })}
+                          className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                          placeholder="请输入图片URL或上传图片"
+                        />
+                        <div className="flex items-center gap-4">
+                          <label className="flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                            <span className="text-sm text-gray-700">选择文件</span>
+                            <input 
+                              type="file" 
+                              className="hidden" 
+                              accept="image/*"
+                              onChange={handleImageUpload}
+                            />
+                          </label>
+                          {formData.image && (
+                            <img
+                              src={formData.image}
+                              alt="预览"
+                              className="h-24 w-auto rounded border border-gray-200"
+                              onError={(e) => {
+                                e.target.style.display = 'none';
+                              }}
+                            />
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                )}
 
                 <div className="grid grid-cols-2 gap-4">
                   <div>

@@ -11,7 +11,12 @@ function Header({ isMobileMenuOpen, setIsMobileMenuOpen }) {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center">
-            <h1 className="text-2xl font-bold text-gray-800">
+            <img 
+              src="/images/org/logo.png" 
+              alt="宿迁大学科技园" 
+              className="h-10 w-auto mr-3"
+            />
+            <h1 className="text-2xl font-bold text-gray-800" style={{ fontFamily: '"华文行楷", "STXingkai", "Xingkai SC", "STXingkai SC", serif' }}>
             宿迁大学科技园
             </h1>
           </div>
