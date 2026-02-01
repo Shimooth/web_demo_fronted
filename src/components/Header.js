@@ -12,13 +12,10 @@ function Header({ isMobileMenuOpen, setIsMobileMenuOpen }) {
           {/* Logo */}
           <div className="flex items-center">
             <img 
-              src="/images/org/logo.png" 
+              src="/images/org/logo_text.jpg" 
               alt="宿迁大学科技园" 
-              className="h-10 w-auto mr-3"
+              className="h-16 w-auto sm:h-20"
             />
-            <h1 className="text-2xl font-bold text-gray-800" style={{ fontFamily: '"华文行楷", "STXingkai", "Xingkai SC", "STXingkai SC", serif' }}>
-            宿迁大学科技园
-            </h1>
           </div>
           
           {/* Search Box - 在小屏幕上隐藏 */}

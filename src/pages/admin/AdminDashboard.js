@@ -11,10 +11,12 @@ function AdminDashboard() {
 
   const menuItems = [
     { path: '/admin/news', name: '新闻管理', icon: '📰' },
-    { path: '/admin/party-building', name: '园区党建', icon: '🏛️' },
+    { path: '/admin/innovation', name: '创新创业', icon: '💡' },
+    { path: '/admin/enterprise-service', name: '企业服务', icon: '🏢' },
     { path: '/admin/policies', name: '政策管理', icon: '📋' },
     { path: '/admin/downloads', name: '资料管理', icon: '📁' },
     { path: '/admin/carousel', name: '轮播图管理', icon: '🖼️' },
+    { path: '/admin/friend-links', name: '友情链接', icon: '🔗' },
   ];
 
   return (
@@ -54,21 +56,21 @@ function AdminDashboard() {
         </div>
 
         {/* 统计信息 */}
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="bg-white rounded-lg shadow-md p-6">
             <h3 className="text-gray-600 mb-2">新闻总数</h3>
             <p className="text-3xl font-bold text-primary-600">0</p>
           </div>
           <div className="bg-white rounded-lg shadow-md p-6">
-            <h3 className="text-gray-600 mb-2">党建内容</h3>
-            <p className="text-3xl font-bold text-red-600">0</p>
+            <h3 className="text-gray-600 mb-2">创新创业</h3>
+            <p className="text-3xl font-bold text-primary-600">0</p>
           </div>
           <div className="bg-white rounded-lg shadow-md p-6">
-            <h3 className="text-gray-600 mb-2">政策总数</h3>
+            <h3 className="text-gray-600 mb-2">企业服务</h3>
             <p className="text-3xl font-bold text-secondary-600">0</p>
           </div>
           <div className="bg-white rounded-lg shadow-md p-6">
-            <h3 className="text-gray-600 mb-2">资料总数</h3>
+            <h3 className="text-gray-600 mb-2">政策/资料</h3>
             <p className="text-3xl font-bold text-green-600">0</p>
           </div>
         </div>

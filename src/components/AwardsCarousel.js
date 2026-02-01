@@ -48,17 +48,17 @@ function AwardsCarousel() {
   }, [awardsImages.length]);
 
   return (
-    <div className="bg-gray-50 py-12">
+    <div className="bg-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-gray-800 text-center mb-8">资质荣誉</h2>
+        <h2 className="text-xl font-bold text-primary-600 mb-6 pb-2 border-b-2 border-primary-600">资质荣誉</h2>
         
         {/* 滚动容器，带淡入淡出遮罩 */}
         <div className="relative">
           {/* 左侧淡入遮罩 */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
           
           {/* 右侧淡出遮罩 */}
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
           
           {/* 滚动区域 */}
           <div
@@ -73,12 +73,12 @@ function AwardsCarousel() {
             {awardsImages.map((image, index) => (
               <div
                 key={`first-${index}`}
-                className="flex-shrink-0 w-64 h-48 bg-gray-100 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+                className="flex-shrink-0 w-64 h-48 bg-white overflow-hidden hover:opacity-95 transition-opacity"
               >
                 <img
                   src={image}
                   alt={`资质荣誉 ${index + 1}`}
-                  className="w-full h-full object-contain p-4"
+                  className="w-full h-full object-contain p-4 bg-white"
                   onError={(e) => {
                     e.target.src = 'https://via.placeholder.com/256x192/cccccc/666666?text=图片加载失败';
                   }}
@@ -90,12 +90,12 @@ function AwardsCarousel() {
             {awardsImages.map((image, index) => (
               <div
                 key={`second-${index}`}
-                className="flex-shrink-0 w-64 h-48 bg-gray-100 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+                className="flex-shrink-0 w-64 h-48 bg-white overflow-hidden hover:opacity-95 transition-opacity"
               >
                 <img
                   src={image}
                   alt={`资质荣誉 ${index + 1}`}
-                  className="w-full h-full object-contain p-4"
+                  className="w-full h-full object-contain p-4 bg-white"
                   onError={(e) => {
                     e.target.src = 'https://via.placeholder.com/256x192/cccccc/666666?text=图片加载失败';
                   }}
