@@ -18,12 +18,25 @@ function Footer() {
               <li><a href="#" className="hover:text-white transition-colors">园区概况</a></li>
               <li><a href="#" className="hover:text-white transition-colors">园区新闻</a></li>
               <li><a href="#" className="hover:text-white transition-colors">政策法规</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">创新创业</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">企业服务</a></li>
             </ul>
           </div>
           
           <div>
             <h3 className="text-lg font-semibold mb-4">关注我们</h3>
             <p className="text-gray-300">扫描二维码关注微信公众号</p>
+            <div className="mt-4">
+              <img
+                src="/images/org/QR_code.jpg"
+                alt="微信公众号二维码"
+                className="w-28 h-28 object-contain rounded bg-white p-1"
+                loading="lazy"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                }}
+              />
+            </div>
           </div>
         </div>
         
